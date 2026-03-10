@@ -20,9 +20,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.94)),
-        url("/img/livro.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.94)), url("/img/livro.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -148,9 +146,7 @@ input:focus {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    min-height: calc(
-        100vh - 80px
-    ); /* Ocupa a tela toda menos a altura do header */
+    min-height: calc(100vh - 80px); /* Ocupa a tela toda menos a altura do header */
     text-align: center;
 }
 
@@ -1148,6 +1144,124 @@ textarea:focus {
     color: #fff !important;
 }
 
+/* Botão redondo no canto */
+.chat-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #e1b12c 0%, #fbc531 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(225, 177, 44, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+.chat-button:hover {
+    transform: scale(1.1);
+}
+.chat-button .icon {
+    font-size: 1.8rem;
+}
+
+/* Janela do Chat */
+.chat-container {
+    background: #121212;
+    border-radius: 12px;
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 320px;
+    height: 450px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--accent);
+    box-shadow:
+        0 12px 25px rgba(212, 175, 55, 0.2),
+        0 0 15px rgba(212, 175, 55, 0.1);
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.chat-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.msg {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    max-width: 85%;
+    line-height: 1.4;
+}
+.msg.ai {
+    background: #333;
+    color: #eee;
+    align-self: flex-start;
+    border-left: 3px solid var(--accent);
+}
+.msg.user {
+    background: var(--accent);
+    color: #000;
+    align-self: flex-end;
+    font-weight: 600;
+}
+
+.chat-footer {
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    background: #1a1a1a;
+}
+
+.chat-footer input {
+    flex: 1;
+    background: #222 !important;
+    margin-bottom: 0 !important;
+    padding: 8px !important;
+    font-size: 0.8rem !important;
+}
+
+.send-btn {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 @font-face {
     font-family: "Gotica";
     src: url("../fonts/AlmendraSC-Regular.ttf") format("truetype");
@@ -1158,4 +1272,41 @@ textarea:focus {
     font-family: "Cinzel";
     src: url("../fonts/Cinzel-VariableFont_wght.ttf") format("truetype");
     font-weight: normal;
+}
+
+/* Estilização da barra de rolagem para o container de mensagens */
+#chat-messages::-webkit-scrollbar {
+    width: 6px; /* Bem fina para não poluir */
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Cor de fundo da trilha (mais escura que o fundo do chat) */
+    border-radius: 10px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background: #333; /* Cor da barrinha */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #e1b12c; /* Cor de destaque ao passar o mouse (mesma do seu botão) */
+}
+
+/* Firefox */
+#chat-messages {
+    scrollbar-width: thin;
+    scrollbar-color: #333 #1a1a1a;
+}
+
+/* Ajuste adicional no container de mensagens para garantir o scroll */
+#chat-messages {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    /* Adicione um scroll suave se quiser */
+    scroll-behavior: smooth;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Biblioteca Digital</title>
     {{-- simplesmente parou de funcionar usei fonte local no lugar
-    
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"> --}}
@@ -15,9 +15,9 @@
     <header>
         <nav class="navbar">
             @auth
-            <div class="logo"><a href="/home">BIBLIOTECA</a></div>
+            <div class="logo"><a href="/home">Biblioteca</a></div>
             @else
-            <div class="logo"><a href="/">BIBLIOTECA</a></div>
+            <div class="logo"><a href="/">Biblioteca</a></div>
             @endauth
             <div class="search-wrapper">
     <form action="{{ route('home') }}" method="GET">
@@ -99,7 +99,63 @@
             });
         @endif
     });
+
+    function toggleChat() {
+    const chatWindow = document.getElementById('chat-window');
+    const display = chatWindow.style.display;
+    chatWindow.style.display = (display === 'none' || display === '') ? 'flex' : 'none';
+}
+
+function handleKeyPress(e) {
+    if (e.key === 'Enter') sendToGemini();
+}
+
+async function sendToGemini() {
+    const input = document.getElementById('chat-input');
+    const container = document.getElementById('chat-messages');
+    const texto = input.value.trim();
+
+    if (!texto) return;
+
+    container.innerHTML += `<div class="msg user">${texto}</div>`;
+    input.value = '';
+    container.scrollTop = container.scrollHeight;
+
+    const loadingId = 'loading-' + Date.now();
+    container.innerHTML += `<div class="msg ai" id="${loadingId}">...</div>`;
+
+    try {
+        const response = await fetch("{{ route('gemini.chat') }}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({ pergunta: texto })
+        });
+
+        const data = await response.json();
+        document.getElementById(loadingId).innerText = data.resposta;
+    } catch (error) {
+        document.getElementById(loadingId).innerText = "Erro ao conectar com o bibliotecário.";
+    }
+    container.scrollTop = container.scrollHeight;
+}
 </script>
+
+<div id="chat-circle" class="chat-button" onclick="toggleChat()">
+    <span class="icon">💬</span>
+</div>
+
+<div id="chat-window" class="chat-container" style="display: none;">
+    <div id="chat-messages" class="chat-content">
+        <div class="msg ai">Olá! Pergunte-me sobre os livros do nosso acervo.</div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="chat-input" placeholder="Qual livro você busca?" onkeypress="handleKeyPress(event)">
+        <button onclick="sendToGemini()" class="send-btn">➔</button>
+    </div>
+</div>
 
 </body>
 </html>

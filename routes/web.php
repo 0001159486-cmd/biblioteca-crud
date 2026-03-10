@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmprestimoController;
 use App\Http\Controllers\LivroController;
+use App\Http\Controllers\GeminiController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
@@ -36,10 +37,11 @@ Route::middleware('guest')->group(function () {
 
 Route::get('/livros/{livro}', [LivroController::class, 'show'])->name('livros.show');
 
+Route::middleware(['auth'])->post('/gemini/chat', [GeminiController::class, 'perguntar'])->name('gemini.chat');
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [LivroController::class, 'index'])->name('home');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
+    Route::post('/gemini/chat', [GeminiController::class, 'perguntar'])->name('gemini.chat');
     Route::post('/livros/{livro}/alugar', [EmprestimoController::class, 'store'])->name('livros.alugar');
     Route::get('/sucess', function () {
         return view('livros.sucess');
