@@ -15,7 +15,6 @@ class GeminiController extends Controller
         try {
             $apiKey = env('GEMINI_API_KEY');
 
-            // Usando o nome EXATO que apareceu no seu curl
             $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=" . $apiKey;
 
             $response = Http::withHeaders([
@@ -36,7 +35,6 @@ class GeminiController extends Controller
                 return response()->json(['resposta' => 'Erro na API: ' . $data['error']['message']]);
             }
 
-            // O Gemini 2.5 mantém a mesma estrutura de resposta
             $texto = $data['candidates'][0]['content']['parts'][0]['text'] ?? 'Sem resposta do modelo.';
 
             return response()->json(['resposta' => $texto]);
