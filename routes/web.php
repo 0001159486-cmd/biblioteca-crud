@@ -3,8 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmprestimoController;
-use App\Http\Controllers\LivroController;
 use App\Http\Controllers\GeminiController;
+use App\Http\Controllers\LivroController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
@@ -18,7 +18,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/usuarios/{user}/edit', [AdminController::class, 'editUser'])->name('admin.users.edit');
     Route::put('/usuarios/{user}', [AdminController::class, 'updateUser'])->name('admin.users.update');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::delete('/emprestimos/{emprestimo}/concluir', [AdminController::class, 'concluirEmprestimo'])->name('admin.emprestimos.concluir');
+    Route::delete('/admin/emprestimos/{id}/concluir', [EmprestimoController::class, 'concluir'])->name('admin.emprestimos.concluir');
 });
 
 Route::get('/', function () {

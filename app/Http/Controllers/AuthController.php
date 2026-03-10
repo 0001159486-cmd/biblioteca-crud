@@ -29,7 +29,7 @@ class AuthController extends Controller
             'role' => 'aluno',
         ]);
 
-        return view('auth.confirmregister');
+        return redirect()->route('login')->with('success', 'Cadastro realizado com sucesso! Agora você pode entrar.');
     }
 
     public function showLogin()
