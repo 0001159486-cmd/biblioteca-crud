@@ -25,7 +25,7 @@ class GeminiController extends Controller
                 'contents' => [
                     [
                         'parts' => [
-                            ['text' => 'Você é um bibliotecário técnico. Pergunta: '.$pergunta],
+                            ['text' => 'você é um bibliotecario. Pergunta: '.$pergunta],
                         ],
                     ],
                 ],
