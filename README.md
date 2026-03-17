@@ -23,4 +23,6 @@ localize a frase "curl.cainfo" e mude para o caminho exato do cacert. exemplo: c
 
 e um pouco abaixo dele vai ter o "openssl.cafile" coloque o mesmo caminho que vc botou no curl.cainfo. exemplo: openssl.cafile = "E:/Users/xsm/Documents/laragon/etc/ssl/cacert.pem"
 
+coloque sua chave de API na .env
+
 e pronto.
