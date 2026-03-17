@@ -11,7 +11,7 @@ php artisan migrate:fresh --seed
 esses comandos sao suficientes pro projeto rodar.
 
 
-sobre o chatbot, como o php do senai é velho, vamos precisar de[CA Cert](https://curl.se/docs/caextract.html)
+sobre o chatbot, como o php do senai é velho, vamos precisar de [CA Cert](https://curl.se/docs/caextract.html)
 
 baixa, renomeia para cacert.pem
 
