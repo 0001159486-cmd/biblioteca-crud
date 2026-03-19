@@ -46,7 +46,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/sucess', function () {
         return view('livros.sucess');
     })->name('livros.sucess');
-    Route::get('/perfil', function () {
-        return view('perfil');
-    })->name('perfil');
+
+    // Perfil
+    Route::get('/perfil', [AuthController::class, 'showPerfil'])->name('perfil');
+    Route::put('/perfil', [AuthController::class, 'updatePerfil'])->name('perfil.update');
 });
