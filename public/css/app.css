@@ -16,6 +16,280 @@ O MAIS IMPORTANTE DE TUDO, NAO APAGUE NADA DAQUI A NAO SER QUE VC QUEIRA UMA DOR
     --text-primary: #f5f5f5;
 }
 
+/* ============================================================
+   TEMA CLARO
+   ============================================================ */
+
+body.light-mode {
+    --bg-body: #e8f0f8;
+    --bg-card: #f2f7fc;
+    --bg-nav: #1a2a3a;
+    --border: #c5d8ec;
+    --text-primary: #1a2a3a;
+    --text-secondary: #3a5068;
+    --accent: #d4af37;
+    --accent-hover: rgba(212, 175, 55, 0.4);
+
+    background: linear-gradient(rgba(232, 240, 248, 0.97), rgba(232, 240, 248, 0.97)), url("/img/livro.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+body.light-mode .navbar {
+    background-color: #1a2a3a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode .logo a,
+body.light-mode .nav-links a,
+body.light-mode .user-profile-link {
+    color: #cce0f5;
+}
+
+body.light-mode .search-box {
+    background: #243447;
+    border-color: #3a5068;
+}
+
+body.light-mode .search-box input {
+    color: #aac4de;
+    background: transparent;
+}
+
+body.light-mode .livro-card {
+    background: linear-gradient(145deg, #f2f7fc 0%, #e8f0f8 100%);
+    border: 1px solid #c5d8ec;
+    box-shadow: 0 4px 15px rgba(26, 42, 58, 0.12);
+}
+
+body.light-mode .livro-info h3 {
+    color: #1a2a3a;
+}
+
+body.light-mode .livro-info p {
+    color: #4a6a8a;
+}
+
+body.light-mode .glass-card {
+    background: rgba(242, 247, 252, 0.85);
+    border: 1px solid rgba(197, 216, 236, 0.6);
+    box-shadow: 0 20px 50px -10px rgba(26, 42, 58, 0.2);
+}
+
+body.light-mode .glass-card-admin {
+    background: rgba(242, 247, 252, 0.85);
+    border: 1px solid rgba(197, 216, 236, 0.6);
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #c5d8ec;
+    color: #1a2a3a;
+}
+
+body.light-mode input:focus,
+body.light-mode select:focus,
+body.light-mode textarea:focus {
+    background: #fff;
+    border-color: var(--accent);
+}
+
+body.light-mode .input-group input {
+    background: rgba(36, 52, 71, 0.06);
+    border: 1px solid rgba(58, 80, 104, 0.2);
+    color: #1a2a3a;
+}
+
+body.light-mode .admin-table {
+    color: #1a2a3a;
+}
+
+body.light-mode .admin-table th {
+    border-bottom-color: #c5d8ec;
+    color: #d4af37;
+}
+
+body.light-mode .admin-table td {
+    border-bottom-color: #ddeaf6;
+}
+
+body.light-mode .stat-card {
+    background: linear-gradient(145deg, #f2f7fc 0%, #e8f0f8 100%);
+    border: 1px solid #c5d8ec;
+}
+
+body.light-mode .stat-label {
+    color: #4a6a8a;
+}
+
+body.light-mode .livro-container {
+    background: #f2f7fc;
+    color: #1a2a3a;
+    border: 1px solid #c5d8ec;
+}
+
+body.light-mode .autor {
+    color: #4a6a8a;
+}
+
+body.light-mode .badge {
+    background: #d0e4f4;
+    color: #1a2a3a;
+}
+
+body.light-mode .divisor {
+    border-top-color: #c5d8ec;
+}
+
+body.light-mode .descricao-box p {
+    color: #2a4a6a;
+}
+
+body.light-mode .titulo {
+    color: #1a2a3a;
+}
+
+body.light-mode .chat-container {
+    background: #1a2a3a;
+}
+
+body.light-mode .chat-content {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .msg.ai {
+    background: #243447;
+    color: #cce0f5;
+}
+
+body.light-mode .chat-footer {
+    background: #12202e;
+}
+
+body.light-mode .chat-footer input {
+    background: #243447 !important;
+    color: #cce0f5 !important;
+}
+
+body.light-mode .page-link {
+    background: rgba(36, 52, 71, 0.06);
+    color: #d4af37;
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+body.light-mode .page-link:hover {
+    background: rgba(212, 175, 55, 0.15);
+}
+
+body.light-mode .page-item.disabled .page-link {
+    color: #7a9ab8;
+    border-color: #b5cce0;
+}
+
+body.light-mode label {
+    color: #3a5068;
+}
+
+body.light-mode .form-group label {
+    color: #4a6a8a;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+    background: #fff;
+    border-color: #c5d8ec;
+    color: #1a2a3a;
+}
+
+body.light-mode .form-header p {
+    color: #4a6a8a;
+}
+
+body.light-mode .btn-cancelar {
+    background: #d0e4f4 !important;
+    color: #1a2a3a !important;
+    border-color: #c5d8ec !important;
+}
+
+body.light-mode .btn-cancelar:hover {
+    background: #bdd6ee !important;
+    color: #0a1a2a !important;
+}
+
+/* ============================================================
+   BOTÃO TOGGLE DE TEMA
+   ============================================================ */
+
+.theme-toggle-btn {
+    /* Reset total para não herdar nada do seletor genérico button */
+    all: unset;
+    box-sizing: border-box;
+
+    /* Layout */
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 14px;
+
+    /* Visual */
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 20px;
+    color: var(--text-primary) !important;
+
+    /* Tipografia */
+    font-family: var(--font-main), serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+    /* Garante que não suba/desça com o hover do button genérico */
+    transform: none !important;
+    box-shadow: none !important;
+    flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(225, 177, 44, 0.15) !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .theme-toggle-btn {
+    background: rgba(200, 220, 255, 0.08) !important;
+    border-color: rgba(200, 220, 255, 0.25) !important;
+    color: #cce0f5 !important;
+}
+
+body.light-mode .theme-toggle-btn:hover {
+    background: rgba(212, 175, 55, 0.15) !important;
+    border-color: #d4af37 !important;
+    color: #d4af37 !important;
+}
+
+.theme-toggle-btn .toggle-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* ============================================================
+   ESTILOS ORIGINAIS (NÃO MEXA AQUI EMBAIXO)
+   ============================================================ */
+
 body {
     margin: 0;
     padding: 0;
@@ -43,6 +317,11 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+.logo {
+    flex: 0 0 auto;
+    min-width: 120px;
+}
+
 .logo a {
     font-weight: bold;
     font-size: 1.5rem;
@@ -51,12 +330,29 @@ body {
     letter-spacing: 1px;
 }
 
+/* Busca fica no centro */
+.search-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Admin toolbar não empurra o nav-links */
+.admin-toolbar {
+    flex: 0 0 auto;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
     margin: 0;
+    padding: 0;
     align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    flex: 0 0 auto;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -144,9 +440,9 @@ input:focus {
 
 .hero-section {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    min-height: calc(100vh - 80px); /* Ocupa a tela toda menos a altura do header */
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
     text-align: center;
 }
 
@@ -176,7 +472,7 @@ h3,
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 100px); /* Ocupa a altura da tela menos o header */
+    min-height: calc(100vh - 100px);
     padding: 20px;
 }
 
@@ -231,7 +527,7 @@ h3,
 .livro-card {
     display: flex;
     flex-direction: column;
-    height: 90%; /* Garante que todos os cards tenham a mesma altura na linha */
+    height: 90%;
     background: rgb(34, 33, 33);
     border-radius: 8px;
     overflow: hidden;
@@ -240,43 +536,43 @@ h3,
 
 .capa-container {
     width: 100%;
-    aspect-ratio: 2 / 3; /* Define uma proporção fixa de capa de livro */
+    aspect-ratio: 2 / 3;
     overflow: hidden;
 }
 
 .capa-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Corta e centraliza a imagem sem distorcer */
+    object-fit: cover;
     display: block;
 }
 
 .livro-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empurra o footer-card para baixo */
+    justify-content: space-between;
     flex-grow: 1;
     padding: 15px;
 }
 
 .footer-card {
-    margin-top: auto; /* Força o alinhamento no final do card */
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .btn-primary {
-    display: block; /* Essencial para ocupar a largura total e centralizar o texto */
+    display: block;
     text-align: center;
     width: 100%;
-    padding: 10px 0; /* Padding vertical de 10px, horizontal zero (já que é 100%) */
+    padding: 10px 0;
     background: #e1b12c;
     color: #000;
     text-decoration: none;
     border-radius: 4px;
     font-weight: bold;
-    box-sizing: border-box; /* Garante que o padding não "estoure" a largura de 100% */
+    box-sizing: border-box;
 }
 
 .btn-primary:hover {
@@ -292,37 +588,32 @@ h3,
     padding: 20px 0;
 }
 
-/* Cada item da lista */
 .page-item {
     display: inline-block;
 }
 
-/* O link/botão em si */
 .page-link {
     display: block;
     padding: 8px 16px;
     background: rgba(255, 255, 255, 0.1);
-    color: #e1b12c; /* Cor dourada que você usou no card */
+    color: #e1b12c;
     text-decoration: none;
     border-radius: 4px;
     border: 1px solid rgba(225, 177, 44, 0.3);
     transition: all 0.2s;
 }
 
-/* Botão da página atual */
 .page-item.active .page-link {
     background: #e1b12c;
     color: #000;
     border-color: #e1b12c;
 }
 
-/* Hover nos botões */
 .page-link:hover {
     background: rgba(225, 177, 44, 0.2);
     transform: translateY(-2px);
 }
 
-/* Botões desativados (ex: 'Anterior' na primeira página) */
 .page-item.disabled .page-link {
     background: transparent;
     color: #666;
@@ -330,20 +621,19 @@ h3,
     cursor: not-allowed;
 }
 
-/* Seleciona os links de anterior e próximo especificamente */
 .page-item:first-child .page-link,
 .page-item:last-child .page-link {
-    font-size: 0; /* Esconde o texto */
+    font-size: 0;
 }
 
 .page-item:first-child .page-link::before {
     content: "«";
-    font-size: 1rem; /* Mostra apenas a seta */
+    font-size: 1rem;
 }
 
 .page-item:last-child .page-link::before {
     content: "»";
-    font-size: 1rem; /* Mostra apenas a seta */
+    font-size: 1rem;
 }
 
 .livro-container {
@@ -358,7 +648,7 @@ h3,
 }
 
 .col-esquerda {
-    flex: 0 0 300px; /* Largura fixa para a coluna da imagem */
+    flex: 0 0 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -451,7 +741,7 @@ h3,
     border-radius: 6px;
     width: 350px;
     height: 38px;
-    padding: 0 0 0 10px; /* Padding apenas na esquerda para o input não colar */
+    padding: 0 0 0 10px;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -475,20 +765,20 @@ h3,
 .search-box button {
     background: transparent;
     border: none;
-    color: #e1b12c; /* Aqui garante a cor amarela */
+    color: #e1b12c;
     height: 100%;
-    width: 45px; /* Largura fixa para o botão ser clicável */
+    width: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
-    outline: none; /* Remove o contorno branco/azul ao clicar */
-    -webkit-tap-highlight-color: transparent; /* Remove o flash cinza no mobile */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .search-box button:hover {
-    background: rgba(225, 177, 44, 0.1); /* Um leve fundo amarelo no hover */
+    background: rgba(225, 177, 44, 0.1);
     color: #fff;
 }
 
@@ -508,7 +798,7 @@ h3,
 .profile-avatar {
     width: 32px;
     height: 32px;
-    background-color: #e1b12c; /* Cor de destaque */
+    background-color: #e1b12c;
     color: #111;
     border-radius: 50%;
     display: flex;
@@ -558,7 +848,7 @@ h3,
 }
 
 .btn-logout-big {
-    background: #dc2626; /* Vermelho padrão de erro/sair */
+    background: #dc2626;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -579,18 +869,15 @@ h3,
     right: 0;
     display: flex;
     gap: 10px;
-    align-items: center; /* Garante alinhamento vertical */
+    align-items: center;
 }
 
 .btn-admin {
-    /* Define altura e largura fixas/minimas para igualar */
     height: 32px;
     min-width: 80px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 0 12px;
     border-radius: 4px;
     font-size: 0.7rem;
@@ -599,7 +886,7 @@ h3,
     cursor: pointer;
     border: none;
     transition: 0.2s;
-    box-sizing: border-box; /* Crucial para o padding não somar na altura */
+    box-sizing: border-box;
 }
 
 .btn-edit {
@@ -789,7 +1076,6 @@ button:active {
     position: relative;
 }
 
-/* Sombra interna na capa para dar profundidade */
 .capa-container::after {
     content: "";
     position: absolute;
@@ -866,7 +1152,6 @@ button:active {
     border: 1px solid #e1b12c;
 }
 
-/* Estilo dos Botões de Ação */
 .btn-acao {
     padding: 6px 12px;
     border-radius: 4px;
@@ -1091,23 +1376,21 @@ textarea:focus {
     border-color: #e1b12c;
 }
 
-/* Container dos botões */
 .form-actions {
     display: flex;
     gap: 15px;
     margin-top: 30px;
-    align-items: stretch; /* Garante que ambos tentem ter a mesma altura */
+    align-items: stretch;
 }
 
-/* Força os botões a serem irmãos gêmeos em tamanho */
 .btn-salvar,
 .btn-cancelar {
-    flex: 1 !important; /* Metade da largura para cada um */
-    height: 45px !important; /* Altura fixa para evitar um ser mais 'gordo' */
+    flex: 1 !important;
+    height: 45px !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    padding: 0 !important; /* Remove padding que causa a 'gordura' diferente */
+    padding: 0 !important;
     margin: 0;
     box-sizing: border-box;
     font-size: 0.75rem !important;
@@ -1118,7 +1401,6 @@ textarea:focus {
     transition: 0.3s;
 }
 
-/* Estilo Dourado (Igual ao btn-primary) */
 .btn-salvar {
     background: linear-gradient(135deg, #e1b12c 0%, #fbc531 100%) !important;
     color: #111 !important;
@@ -1126,7 +1408,6 @@ textarea:focus {
     box-shadow: 0 4px 15px rgba(225, 177, 44, 0.3);
 }
 
-/* Estilo Cinza Escuro (Igual ao btn-cancel) */
 .btn-cancelar {
     background: #333 !important;
     color: #eee !important;
@@ -1274,24 +1555,23 @@ textarea:focus {
     font-weight: normal;
 }
 
-/* Estilização da barra de rolagem para o container de mensagens */
 #chat-messages::-webkit-scrollbar {
-    width: 6px; /* Bem fina para não poluir */
+    width: 6px;
 }
 
 #chat-messages::-webkit-scrollbar-track {
-    background: #1a1a1a; /* Cor de fundo da trilha (mais escura que o fundo do chat) */
+    background: #1a1a1a;
     border-radius: 10px;
 }
 
 #chat-messages::-webkit-scrollbar-thumb {
-    background: #333; /* Cor da barrinha */
+    background: #333;
     border-radius: 10px;
     transition: background 0.3s ease;
 }
 
 #chat-messages::-webkit-scrollbar-thumb:hover {
-    background: #e1b12c; /* Cor de destaque ao passar o mouse (mesma do seu botão) */
+    background: #e1b12c;
 }
 
 /* Firefox */
@@ -1300,13 +1580,11 @@ textarea:focus {
     scrollbar-color: #333 #1a1a1a;
 }
 
-/* Ajuste adicional no container de mensagens para garantir o scroll */
 #chat-messages {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 15px;
-    /* Adicione um scroll suave se quiser */
     scroll-behavior: smooth;
 }
