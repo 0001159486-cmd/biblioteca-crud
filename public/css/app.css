@@ -8,9 +8,9 @@ O MAIS IMPORTANTE DE TUDO, NAO APAGUE NADA DAQUI A NAO SER QUE VC QUEIRA UMA DOR
     --danger: #ef4444;
     --border: #333;
 
-    --font-titles: "Gotica", serif;
-    --font-body: "Cinzel", serif;
-    --font-main: "Cinzel", serif;
+    --font-titles: "Orbitron", sans-serif;
+    --font-body: "Orbitron", sans-serif;
+    --font-main: "Orbitron", sans-serif;
     --accent: #d4af37;
     --accent-hover: rgba(225, 177, 44, 0.5);
     --text-primary: #f5f5f5;
@@ -1544,15 +1544,9 @@ textarea:focus {
 }
 
 @font-face {
-    font-family: "Gotica";
-    src: url("../fonts/AlmendraSC-Regular.ttf") format("truetype");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Cinzel";
-    src: url("../fonts/Cinzel-VariableFont_wght.ttf") format("truetype");
-    font-weight: normal;
+    font-family: "Orbitron";
+    src: url("../fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
 }
 
 #chat-messages::-webkit-scrollbar {
