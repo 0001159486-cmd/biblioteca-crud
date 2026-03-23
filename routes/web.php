@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\EmprestimoController;
 use App\Http\Controllers\GeminiController;
 use App\Http\Controllers\LivroController;
@@ -50,4 +51,8 @@ Route::middleware(['auth'])->group(function () {
     // Perfil
     Route::get('/perfil', [AuthController::class, 'showPerfil'])->name('perfil');
     Route::put('/perfil', [AuthController::class, 'updatePerfil'])->name('perfil.update');
+
+    // Avaliações
+    Route::post('/livros/{livro}/avaliar', [AvaliacaoController::class, 'store'])->name('livros.avaliar');
+    Route::delete('/livros/{livro}/avaliar', [AvaliacaoController::class, 'destroy'])->name('livros.avaliar.destroy');
 });

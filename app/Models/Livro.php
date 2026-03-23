@@ -17,4 +17,14 @@ class Livro extends Model
     {
         return $this->hasMany(Emprestimo::class);
     }
+
+    public function avaliacoes()
+    {
+        return $this->hasMany(Avaliacao::class);
+    }
+
+    public function mediaNotas()
+    {
+        return round($this->avaliacoes()->avg('nota'), 1);
+    }
 }

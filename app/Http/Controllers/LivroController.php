@@ -26,9 +26,13 @@ class LivroController extends Controller
 
     public function show(Livro $livro)
     {
-        $livro->load('genero');
+        $livro->load(['genero', 'avaliacoes.user']);
 
-        return view('livros.show', compact('livro'));
+        $minhaAvaliacao = auth()->check()
+            ? $livro->avaliacoes->firstWhere('user_id', auth()->id())
+            : null;
+
+        return view('livros.show', compact('livro', 'minhaAvaliacao'));
     }
 
     public function create()
@@ -41,17 +45,17 @@ class LivroController extends Controller
     public function store(Request $request)
     {
         $dados = $request->validate([
-            'titulo' => 'required|string|max:255',
-            'autor' => 'required|string|max:255',
-            'descricao' => 'required|string',
-            'estoque' => 'required|integer|min:0',
-            'genero_id' => 'required|exists:generos,id',
-            'capa' => 'required|image|mimes:jpeg,png,jpg|max:2048', // 2MB
+            'titulo'          => 'required|string|max:255',
+            'autor'           => 'required|string|max:255',
+            'descricao'       => 'required|string',
+            'estoque'         => 'required|integer|min:0',
+            'genero_id'       => 'required|exists:generos,id',
+            'capa'            => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'data_publicacao' => 'nullable|date',
         ], [
-            'capa.max' => 'A imagem da capa é muito pesada! O limite máximo é 2MB.',
-            'capa.image' => 'O arquivo enviado deve ser uma imagem válida.',
-            'capa.required' => 'Você precisa enviar uma imagem de capa.',
+            'capa.max'        => 'A imagem da capa é muito pesada! O limite máximo é 2MB.',
+            'capa.image'      => 'O arquivo enviado deve ser uma imagem válida.',
+            'capa.required'   => 'Você precisa enviar uma imagem de capa.',
             'titulo.required' => 'O título é obrigatório.',
         ]);
 
@@ -73,17 +77,15 @@ class LivroController extends Controller
 
     public function update(Request $request, Livro $livro)
     {
-        $regras = [
-            'titulo' => 'required|string|max:255',
-            'autor' => 'required|string|max:255',
-            'estoque' => 'required|integer|min:0',
-            'descricao' => 'required|string',
-            'genero_id' => 'required|exists:generos,id',
+        $dados = $request->validate([
+            'titulo'          => 'required|string|max:255',
+            'autor'           => 'required|string|max:255',
+            'estoque'         => 'required|integer|min:0',
+            'descricao'       => 'required|string',
+            'genero_id'       => 'required|exists:generos,id',
             'data_publicacao' => 'nullable|date',
-            'capa' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-        ];
-
-        $dados = $request->validate($regras);
+            'capa'            => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
 
         if ($request->hasFile('capa')) {
             if ($livro->capa && Storage::disk('public')->exists($livro->capa)) {
