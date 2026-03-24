@@ -24,9 +24,14 @@
                 <input type="password" name="password" id="password" required>
             </div>
 
-            <div style="display: inline; align-items: center; gap: 10px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                <input type="checkbox" name="remember" id="remember" style="width: auto; margin: 0;">
-                <label for="remember" style="cursor: pointer;">Lembrar de mim</label>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                <div>
+                    <input type="checkbox" name="remember" id="remember" style="width: auto; margin: 0;">
+                    <label for="remember" style="cursor: pointer;">Lembrar de mim</label>
+                </div>
+                <a href="{{ route('password.request') }}" style="color: var(--accent); text-decoration: none; font-size: 0.85rem;">
+                    Esqueci minha senha
+                </a>
             </div>
 
             <button type="submit" class="btn-primary" style="width: 100%;">Entrar</button>
